@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Grikona — Inmobiliaria verificada en Valencia</title>
+  <meta name="description" content="Compra, vende o alquila tu vivienda en Valencia con propiedades verificadas y un equipo que te acompaña de principio a fin.">
+  <meta name="keywords" content="inmobiliaria Valencia, pisos Valencia, comprar casa Valencia, alquiler Valencia, propiedades verificadas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="index.html" class="brand" aria-label="Grikona, inicio">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#B18D4C"/>
+        <path d="M9 21V11l7-5 7 5v10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 21v-5h6v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Grikona<small>Valencia</small></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#solucion" data-i18n="nav.how">Cómo funciona</a></li>
+      <li><a href="#confianza" data-i18n="nav.trust">Confianza</a></li>
+      <li><a href="#precios" data-i18n="nav.pricing">Precios</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="inmobiliarias.html" data-i18n="nav.agencies">Para inmobiliarias</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="lang-select">
+        <button class="lang-select__trigger" type="button" aria-label="Idioma">
+          <svg class="lang-select__globe" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.8 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.8-3.8-9S9.5 5.7 12 3z" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span data-lang-current>🇪🇸 ES</span>
+          <svg class="lang-select__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-select__menu">
+          <button class="lang-select__opt" type="button" data-lang="es"><span class="lang-select__flag">🇪🇸</span> Español</button>
+          <button class="lang-select__opt" type="button" data-lang="en"><span class="lang-select__flag">🇬🇧</span> English</button>
+          <button class="lang-select__opt" type="button" data-lang="zh"><span class="lang-select__flag">🇨🇳</span> 中文</button>
+        </div>
+      </div>
+      <a href="#contacto" class="btn btn-secondary btn--sm" data-i18n="nav.cta">Valoración gratuita</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" data-i18n-aria="nav.menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__copy reveal">
+        <span class="hero__eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Inmobiliaria en Valencia · RAICV-6201</span></span>
+        <h1 data-i18n="hero.h1">Tu hogar en Valencia, verificado y sin sorpresas</h1>
+        <p class="hero__lead" data-i18n="hero.lead">Compra, vende o alquila con un equipo que comprueba cada propiedad y te acompaña de la primera visita a la firma. Sin anuncios fantasma, sin comisiones abusivas.</p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn-secondary"><span data-i18n="hero.cta1">Quiero acceso anticipado</span> <span class="arrow">→</span></a>
+          <a href="#solucion" class="btn btn-outline-light" data-i18n="hero.cta2">Ver cómo funciona</a>
+        </div>
+        <div class="hero__social">
+          <div class="hero__avatars">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80" alt="">
+          </div>
+          <p><strong data-i18n="hero.socialStrong">+100 familias</strong> <span data-i18n="hero.socialText">ya confían en Grikona</span></p>
+        </div>
+      </div>
+
+      <div class="phone-demo reveal reveal--right" data-delay="1">
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__status"><span>9:41</span><span class="phone__island"></span><span>▮▮▮ ▰</span></div>
+            <div class="phone__head">
+              <span class="phone__logo">Grikona<span>.</span></span>
+              <span class="phone__tag" data-i18n="phone.demo">DEMO</span>
+            </div>
+            <div class="phone__title"><p data-i18n="phone.title">Tu próximo hogar</p><span data-i18n="phone.subtitle">Valencia</span></div>
+            <div class="phone__deck" id="deck">
+              <div class="deck__back-far"></div>
+              <div class="deck__back"></div>
+            </div>
+            <div class="phone__controls">
+              <button class="ctrl-skip" id="btnSkip" aria-label="Descartar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              </button>
+              <button class="ctrl-info" id="btnInfo" aria-label="Ver detalle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </button>
+              <button class="ctrl-like" id="btnLike" aria-label="Me encaja">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.6 8.7 2.4 5 6 5c2.2 0 3.7 1.2 6 3.4C14.3 6.2 15.8 5 18 5c3.6 0 5.4 3.7 4 6.8C19.5 16.4 12 21 12 21z"/></svg>
+              </button>
+            </div>
+            <p class="phone__feedback" id="deckFeedback" data-i18n="phone.feedback">Desliza y descubre</p>
+            <div class="phone__hint" data-i18n="phone.tagline">Tu hogar empieza con un Grikona Match</div>
+            <div class="phone__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STRIP ===================== -->
+<div class="strip">
+  <div class="container strip__inner">
+    <span class="strip__label" data-i18n="strip.label">Trabajamos en</span>
+    <div class="strip__track">
+      <span class="strip__item">Ruzafa</span><span class="strip__item">El Carmen</span><span class="strip__item">El Cabanyal</span><span class="strip__item">Benimaclet</span><span class="strip__item">L'Eixample</span><span class="strip__item">Ciutat Vella</span><span class="strip__item">Quatre Carreres</span><span class="strip__item">La Cañada</span>
+      <span class="strip__item">Ruzafa</span><span class="strip__item">El Carmen</span><span class="strip__item">El Cabanyal</span><span class="strip__item">Benimaclet</span><span class="strip__item">L'Eixample</span><span class="strip__item">Ciutat Vella</span><span class="strip__item">Quatre Carreres</span><span class="strip__item">La Cañada</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PROBLEM ===================== -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="problem-intro reveal">
+      <div>
+        <span class="eyebrow" data-i18n="problem.eyebrow">El problema</span>
+        <h2 data-i18n="problem.h2">El mercado inmobiliario tiene un problema de calidad, no de oferta</h2>
+      </div>
+      <p class="lead" data-i18n="problem.lead">Miles de viviendas se venden cada año en Valencia. Pero la experiencia de comprar, vender o alquilar sigue siendo lenta, cara y opaca.</p>
+    </div>
+
+    <div class="problems">
+      <article class="problem reveal" data-delay="1">
+        <span class="problem__stat" data-count="40" data-suffix="%">0%</span>
+        <p class="problem__label" data-i18n="problem.1.label">de anuncios en portales son duplicados o directamente fantasma</p>
+        <h3 class="problem__title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span data-i18n="problem.1.title">Buscas piso y pierdes el tiempo</span>
+        </h3>
+        <p class="problem__body" data-i18n="problem.1.body">Navegas entre anuncios falsos, precios inflados y contactos que nunca responden. Envías decenas de mensajes y no sabes si el piso sigue disponible.</p>
+      </article>
+
+      <article class="problem reveal" data-delay="2">
+        <span class="problem__stat" data-count="70" data-suffix="%">0%</span>
+        <p class="problem__label" data-i18n="problem.2.label">de los contactos que recibes no tienen intención real de comprar</p>
+        <h3 class="problem__title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span data-i18n="problem.2.title">Publicas y te llueven curiosos</span>
+        </h3>
+        <p class="problem__body" data-i18n="problem.2.body">Pones tu piso en un portal y recibes decenas de llamadas de agencias, curiosos y personas que no están en posición de comprar o alquilar.</p>
+      </article>
+
+      <article class="problem reveal" data-delay="3">
+        <span class="problem__stat" data-count="300" data-prefix="+" data-suffix="h">+0h</span>
+        <p class="problem__label" data-i18n="problem.3.label">de gestión media por operación entre visitas, llamadas y papeleo</p>
+        <h3 class="problem__title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span data-i18n="problem.3.title">Gestionar una operación desgasta</span>
+        </h3>
+        <p class="problem__body" data-i18n="problem.3.body">Visitas, documentación, negociación y seguimiento. El cuello de botella no es encontrar interesados, es llevar la operación hasta el final sin errores.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOLUTION ===================== -->
+<section class="section section--gray" id="solucion">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="solution.eyebrow">La solución</span>
+      <h2 data-i18n="solution.h2">Una plataforma para buscar. Un equipo para acompañarte.</h2>
+      <p class="lead" data-i18n="solution.lead">Encuentra viviendas verificadas desde cualquier dispositivo y deja que nuestro equipo se encargue de la parte difícil: visitas, negociación y papeleo.</p>
+    </div>
+
+    <div class="platforms">
+      <div class="solution-app reveal">
+        <span class="platform-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-i18n="solution.appLabel">La app móvil · dos perfiles</span>
+        </span>
+        <div class="connection">
+          <div class="person">
+            <span data-i18n="solution.seekers">Buscadores</span>
+            <h3 data-i18n="solution.seekersH">Encuentra tu hogar.</h3>
+            <p data-i18n="solution.seekersP">Descubre viviendas para comprar o alquilar y habla con quien las gestiona.</p>
+          </div>
+          <div class="hands">
+            <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+              <circle cx="60" cy="60" r="56" fill="rgba(255,255,255,.08)"/>
+              <path d="M28 62l14 14 8-10 10 12 14-18" stroke="#E8E2D5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M92 62L78 48l-8 10-10-12-14 18" stroke="#B18D4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="person">
+            <span data-i18n="solution.owners">Propietarios</span>
+            <h3 data-i18n="solution.ownersH">Encuentra a quien lo busca.</h3>
+            <p data-i18n="solution.ownersP">Publica tu vivienda, recibe contactos cualificados y elige cuánto apoyo necesitas.</p>
+          </div>
+        </div>
+        <p class="app-closing" data-i18n="solution.appClosing">Dos lados de una misma conexión, en la misma app.</p>
+      </div>
+
+      <div class="solution-dash reveal" data-delay="1">
+        <span class="platform-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-i18n="solution.dashLabel">El panel web · Inmobiliarias</span>
+        </span>
+        <h3 data-i18n="solution.dashH">Acompaña a quien quiere tu ayuda.</h3>
+        <p data-i18n="solution.dashP">Recibe solicitudes de propietarios y organiza captaciones, equipo y seguimiento desde tu panel profesional.</p>
+        <a href="inmobiliarias.html"><span data-i18n="solution.dashLink">Conoce el dashboard</span> <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="solution-help">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="solution.helpEyebrow">Si publicas una vivienda</span>
+        <h3 data-i18n="solution.helpH">La ayuda profesional empieza con tu decisión.</h3>
+        <p data-i18n="solution.helpP">Al publicar, eliges cómo quieres gestionar tu inmueble. Así conectamos tu anuncio con los profesionales adecuados.</p>
+      </div>
+      <div class="choices reveal" data-delay="1">
+        <div class="choice" data-selected="true">
+          <button class="choice__btn" type="button"><span data-i18n="choice1">Quiero ayuda desde el principio</span> <span class="sign">+</span></button>
+          <div class="choice__panel"><p data-i18n="choice1p">Te conectamos con agentes verificados que trabajan en tu zona y con tu tipo de vivienda. Ellos se encargan de las visitas, la negociación y toda la documentación.</p></div>
+        </div>
+        <div class="choice">
+          <button class="choice__btn" type="button"><span data-i18n="choice2">Primero lo intento por mi cuenta</span> <span class="sign">+</span></button>
+          <div class="choice__panel"><p data-i18n="choice2p">Si eliges esta opción y no encuentras un match en un plazo razonable, se activa la conexión con profesionales. Tú decides dejar preparada esa ayuda.</p></div>
+        </div>
+        <div class="choice">
+          <button class="choice__btn" type="button"><span data-i18n="choice3">Prefiero gestionarlo directamente</span> <span class="sign">+</span></button>
+          <div class="choice__panel"><p data-i18n="choice3p">Publicas y hablas con compradores e inquilinos verificados. Mantienes la gestión de tu vivienda completamente en tus manos.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST ===================== -->
+<section class="trust" id="confianza">
+  <div class="container">
+    <div class="trust__grid">
+      <div class="reveal reveal--left">
+        <span class="eyebrow" style="color:var(--secondary)" data-i18n="trust.eyebrow">Grikona / Confianza</span>
+        <h2 class="trust__title" data-i18n-html="trust.title">Confianza<br>desde el<br><span>primer día.</span></h2>
+        <p class="trust__statement" data-i18n-html="trust.statement">Construido sobre verificación,<br>no sobre volumen.</p>
+        <p class="trust__intro" data-i18n="trust.intro">Mientras otros portales priorizan la cantidad, nosotros comprobamos cada persona y cada propiedad antes de publicar.</p>
+      </div>
+
+      <div class="reveal reveal--right">
+        <div class="verification-head">
+          <span class="big-three" data-count="3">0</span>
+          <p data-i18n-html="trust.verifTitle">Capas de<br><strong>verificación.</strong></p>
+        </div>
+        <ul class="verification-list">
+          <li>
+            <span class="num">01</span>
+            <div><h3 data-i18n="trust.v1t">Identidad verificada</h3><p data-i18n="trust.v1p">DNI/NIE y comprobación documental obligatoria de cada propietario.</p></div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div><h3 data-i18n="trust.v2t">Anuncios reales</h3><p data-i18n="trust.v2p">Verificación catastral y visita física de cada propiedad antes de publicarla.</p></div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div><h3 data-i18n="trust.v3t">Datos protegidos</h3><p data-i18n="trust.v3p">Infraestructura segura y cumplimiento estricto del RGPD.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trust__footer">
+      <div class="community">
+        <div class="community__avatars">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80" alt="">
+        </div>
+        <p><strong>100+</strong><span data-i18n="trust.community">Familias acompañadas</span></p>
+      </div>
+      <div class="launch-fee">
+        <strong>0<span>€</span></strong>
+        <p data-i18n="trust.fee">Comisión de captación durante la fase de lanzamiento</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="section" id="como">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" data-i18n="how.eyebrow">Cómo funciona</span>
+      <h2 data-i18n="how.h2">Tu conexión empieza en la app</h2>
+      <p class="lead" data-i18n="how.lead">Dos perfiles en la misma app: busca tu próximo hogar o publica la vivienda que quieres vender o alquilar.</p>
+    </div>
+
+    <div style="text-align:center">
+      <div class="tabs reveal" role="tablist" aria-label="Perfiles">
+        <button class="tab" role="tab" aria-selected="true" data-tab="buscadores" data-i18n="how.tabSeekers">Buscadores</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="propietarios" data-i18n="how.tabOwners">Propietarios</button>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-buscadores" role="tabpanel">
+      <div class="steps">
+        <article class="step reveal" data-delay="1">
+          <span class="step__num">01</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3 data-i18n="how.s1t">Dinos qué buscas</h3>
+          <p data-i18n="how.s1p">Presupuesto real, zona, plazos. Nuestro sistema aprende tus preferencias reales, no solo los filtros que marcas.</p>
+        </article>
+        <article class="step reveal" data-delay="2">
+          <span class="step__num">02</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="how.s2t">Recibe solo anuncios verificados</h3>
+          <p data-i18n="how.s2p">Cada propiedad pasa verificación de identidad, titularidad catastral y control de calidad. Nada de anuncios fantasma.</p>
+        </article>
+        <article class="step reveal" data-delay="3">
+          <span class="step__num">03</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="how.s3t">Conecta directamente</h3>
+          <p data-i18n="how.s3p">Cuando hay encaje, se produce el match. Contacto directo con el propietario o su agente, sin intermediarios opacos.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-propietarios" role="tabpanel" hidden>
+      <div class="steps">
+        <article class="step">
+          <span class="step__num">01</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="how.o1t">Publica tu vivienda</h3>
+          <p data-i18n="how.o1p">Sube fotos, datos y precio. Verificamos la titularidad y te ayudamos a fijar un precio competitivo de mercado.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">02</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3 data-i18n="how.o2t">Recibe contactos cualificados</h3>
+          <p data-i18n="how.o2p">Solo personas verificadas y con intención real de comprar o alquilar. Tú decides cómo gestionar cada contacto.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">03</span>
+          <div class="step__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="how.o3t">Cierra con apoyo o en solitario</h3>
+          <p data-i18n="how.o3p">Gestiona la operación tú mismo o pide ayuda a nuestro equipo en cualquier punto del proceso.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Dashboard showcase -->
+    <div class="showcase reveal">
+      <div class="grid-2" style="margin-bottom:36px;align-items:end">
+        <div>
+          <span class="eyebrow" data-i18n="how.dashEyebrow">Para inmobiliarias · Dashboard web</span>
+          <h2 style="font-size:clamp(1.8rem,3.2vw,2.6rem)" data-i18n="how.dashH">Tu trabajo profesional tiene su propio espacio.</h2>
+        </div>
+        <p class="muted" data-i18n="how.dashP">Consulta la evolución de tus contactos, los matches y el estado de tu cartera desde las analíticas del dashboard.</p>
+      </div>
+
+      <div class="showcase__frame">
+        <div class="showcase__bar"><i></i><i></i><i></i><span>app.grikona.com/dashboard</span></div>
+        <div class="dash-grid">
+          <aside class="dash-side">
+            <div class="brand"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#B18D4C"/><path d="M9 21V11l7-5 7 5v10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 21v-5h6v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Grikona</div>
+            <ul>
+              <li class="active"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="dash.nav1">Resumen</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="dash.nav2">Propiedades</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="dash.nav3">Contactos</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 15l4-4 3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="dash.nav4">Analíticas</span></li>
+            </ul>
+          </aside>
+          <div class="dash-main">
+            <div class="dash-kpis">
+              <div class="kpi"><span data-i18n="how.kpi1">Contactos este mes</span><strong>128</strong><em>↑ 18%</em></div>
+              <div class="kpi"><span data-i18n="how.kpi2">Matches activos</span><strong>42</strong><em>↑ 9%</em></div>
+              <div class="kpi"><span data-i18n="how.kpi3">Cartera</span><strong>67</strong><em>↑ 6%</em></div>
+            </div>
+            <div class="dash-chart">
+              <h4 data-i18n="how.chartTitle">Evolución de leads y matches</h4>
+              <div class="bars">
+                <i style="height:42%"></i><i style="height:58%"></i><i style="height:50%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:86%"></i><i style="height:78%"></i><i style="height:96%"></i><i style="height:70%"></i><i style="height:88%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="font-size:13px;margin-top:14px" data-i18n="how.dashNote">Dashboard real · Analíticas con datos de demostración.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="features.eyebrow">Lo que nos hace diferentes</span>
+      <h2 data-i18n="features.h2">Conectar es más fácil cuando puedes confiar.</h2>
+    </div>
+
+    <div class="features">
+      <article class="feature reveal" data-delay="1">
+        <div class="feature__icon">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M6 17l10-4 10 4-10 4-10-4z" fill="#E8E2D5" stroke="#B18D4C" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 19v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5" stroke="#B18D4C" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 6l1.6 3.4L21 10l-3.4 1.6L16 15l-1.6-3.4L11 10l3.4-.6L16 6z" fill="#B18D4C"/></svg>
+        </div>
+        <h3 data-i18n="feat.1t">Verificación como producto</h3>
+        <p data-i18n="feat.1p">Identidad del propietario, titularidad catastral y control de calidad del anuncio. Los portales tradicionales no verifican porque su modelo depende del volumen, no de la calidad.</p>
+      </article>
+
+      <article class="feature reveal" data-delay="2">
+        <div class="feature__icon">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 27s-9-5.4-11.5-11C2.7 12 5.2 7.5 9.5 8.4c2.3.5 4.3 2.2 6.5 5 2.2-2.8 4.2-4.5 6.5-5 4.3-.9 6.8 3.6 5 7.6C25 21.6 16 27 16 27z" fill="#E8E2D5" stroke="#B18D4C" stroke-width="1.6" stroke-linejoin="round"/><path d="M11 16l3 3 3-5 2 4 3-3" stroke="#B18D4C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="feat.2t">Matching por intención real</h3>
+        <p data-i18n="feat.2p">Nuestro sistema analiza presupuesto efectivo, plazos de decisión y tolerancia a concesiones. No muestra lo que más se clickea: muestra lo que realmente encaja.</p>
+      </article>
+
+      <article class="feature reveal" data-delay="3">
+        <div class="feature__icon">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" fill="#E8E2D5" stroke="#B18D4C" stroke-width="1.6"/><path d="M16 9v7l5 3" stroke="#B18D4C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="feat.3t">Acompañamiento humano</h3>
+        <p data-i18n="feat.3p">App para buscadores y propietarios, y un equipo profesional que se encarga de visitas, negociación y papeleo. Cada perfil tiene la ayuda que necesita.</p>
+      </article>
+
+      <article class="feature reveal" data-delay="4">
+        <div class="feature__icon">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l3.2 2.3 3.9-.3 1.2 3.7 3.2 2.3-1.4 3.6 1.4 3.6-3.2 2.3-1.2 3.7-3.9-.3L16 28l-3.2-2.3-3.9.3-1.2-3.7L4.5 20l1.4-3.6L4.5 13l3.2-2.3 1.2-3.7 3.9.3L16 4z" fill="#E8E2D5" stroke="#B18D4C" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 16l3 3 5-6" stroke="#B18D4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="feat.4t">Reputación verificable</h3>
+        <p data-i18n="feat.4p">Valoraciones post-interacción e historial de operaciones. Un comprador con tres operaciones cerradas no es lo mismo que un recién llegado. Confianza sin intermediarios caros.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section" id="precios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="pricing.eyebrow">Precios</span>
+      <h2 data-i18n="pricing.h2">Empieza gratis. Crece a tu ritmo.</h2>
+      <p class="lead" data-i18n="pricing.lead">Sin permanencia. Sin sorpresas. Paga solo por lo que necesitas.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal" data-delay="1">
+        <div class="plan__head">
+          <div class="plan__label"><span data-i18n="plan1.label">App · Para particulares</span></div>
+          <h3 data-i18n="plan1.name">Gratis</h3>
+          <div class="plan__price"><strong>0€</strong><span>/mes</span></div>
+        </div>
+        <div class="plan__body">
+          <ul class="plan__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f1">Anuncios limitados</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f2">Mensajes limitados</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan1.f3">Verificación básica</span></li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost btn--block" data-i18n="plan1.cta">Empezar gratis</a>
+        </div>
+      </article>
+
+      <article class="plan reveal" data-delay="2" data-popular="true">
+        <div class="plan__head">
+          <div class="plan__label"><span data-i18n="plan2.label">App · Para propietarios activos</span><span class="plan__popular" data-i18n="plan2.popular">Más popular</span></div>
+          <h3 data-i18n="plan2.name">Pro Individual</h3>
+          <div class="plan__price"><strong>9,99€</strong><span>/mes</span></div>
+        </div>
+        <div class="plan__body">
+          <ul class="plan__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f1">Hasta 5 anuncios activos</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f2">Mensajes ilimitados</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f3">Estadísticas de rendimiento</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan2.f4">Visibilidad mejorada</span></li>
+          </ul>
+          <a href="#contacto" class="btn btn-secondary btn--block" data-i18n="plan2.cta">Probar 14 días gratis</a>
+        </div>
+      </article>
+
+      <article class="plan reveal" data-delay="3">
+        <div class="plan__head">
+          <div class="plan__label"><span data-i18n="plan3.label">Dashboard · Para inmobiliarias</span></div>
+          <h3 data-i18n="plan3.name">Pro Agencia</h3>
+          <div class="plan__price"><strong>49,99€</strong><span>/mes</span></div>
+        </div>
+        <div class="plan__body">
+          <ul class="plan__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f1">Anuncios ilimitados</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f2">Dashboard con CRM</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f3">Analíticas por asesor</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f4">Posicionamiento premium</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="plan3.f5">Acceso al feed opt-in</span></li>
+          </ul>
+          <a href="inmobiliarias.html" class="btn btn-primary btn--block" data-i18n="plan3.cta">Probar 14 días gratis</a>
+        </div>
+      </article>
+    </div>
+    <p class="plan-note" data-i18n="pricing.note">También disponible: anuncios destacados desde 1,99€/día, etiquetas especiales desde 0,99€ y créditos de contacto desde 0,50€.</p>
+  </div>
+</section>
+
+<!-- ===================== COMPARISON ===================== -->
+<section class="section comparison">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="cmp.eyebrow">Comparativa</span>
+      <h2 data-i18n="cmp.h2">¿Cómo se compara Grikona?</h2>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr><th data-i18n="cmp.h.feature">Característica</th><th data-i18n="cmp.h.grikona">Grikona</th><th data-i18n="cmp.h.portals">Portales tradicionales</th><th data-i18n="cmp.h.digital">Agencias digitales</th></tr>
+        </thead>
+        <tbody>
+          <tr><th data-i18n="cmp.r1">Modelo</th><td data-i18n="cmp.r1.g">Marketplace verificado + agencia</td><td data-i18n="cmp.r1.p">Portal de anuncios</td><td data-i18n="cmp.r1.d">Agencia digital</td></tr>
+          <tr><th data-i18n="cmp.r2">Verificación de anuncios</th><td data-i18n="cmp.r2.g">Identidad + titularidad + visita</td><td data-i18n="cmp.r2.p">No verifican (modelo de volumen)</td><td data-i18n="cmp.r2.d">Solo propiedades propias</td></tr>
+          <tr><th data-i18n="cmp.r3">Comisión por operación</th><td data-i18n="cmp.r3.g">0% (fase lanzamiento)</td><td data-i18n="cmp.r3.p">No aplica</td><td data-i18n="cmp.r3.d">2-5% sobre la venta</td></tr>
+          <tr><th data-i18n="cmp.r4">Cuota mensual mínima</th><td data-i18n="cmp.r4.g">0€ (plan gratuito)</td><td data-i18n="cmp.r4.p">Desde 300€/mes</td><td data-i18n="cmp.r4.d">No aplica</td></tr>
+          <tr><th data-i18n="cmp.r5">Matching inteligente</th><td data-i18n="cmp.r5.g">Por intención real</td><td data-i18n="cmp.r5.p">Por filtros y posicionamiento pagado</td><td data-i18n="cmp.r5.d">Asignación interna</td></tr>
+          <tr><th data-i18n="cmp.r6">Ayuda a elección del propietario</th><td data-i18n="cmp.r6.g">Exclusivo</td><td data-i18n="cmp.r6.p">No existe</td><td data-i18n="cmp.r6.d">No existe</td></tr>
+          <tr><th data-i18n="cmp.r7">Dashboard profesional</th><td data-i18n="cmp.r7.g">CRM + analíticas por asesor</td><td data-i18n="cmp.r7.p">Herramientas básicas</td><td data-i18n="cmp.r7.d">Solo uso interno</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cmp-mobile">
+      <div class="cmp-feature">
+        <h3 data-i18n="cmp.r1">Modelo</h3>
+        <dl>
+          <div class="cmp-row"><dt>Grikona</dt><dd data-i18n="cmp.r1.g">Marketplace verificado + agencia</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.portals">Portales</dt><dd data-i18n="cmp.r1.p">Portal de anuncios</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.digital">Agencias digitales</dt><dd data-i18n="cmp.r1.d">Agencia digital</dd></div>
+        </dl>
+      </div>
+      <div class="cmp-feature">
+        <h3 data-i18n="cmp.r2">Verificación de anuncios</h3>
+        <dl>
+          <div class="cmp-row"><dt>Grikona</dt><dd data-i18n="cmp.r2.g">Identidad + titularidad + visita</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.portals">Portales</dt><dd data-i18n="cmp.r2.p">No verifican</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.digital">Agencias digitales</dt><dd data-i18n="cmp.r2.d">Solo propiedades propias</dd></div>
+        </dl>
+      </div>
+      <div class="cmp-feature">
+        <h3 data-i18n="cmp.r3">Comisión por operación</h3>
+        <dl>
+          <div class="cmp-row"><dt>Grikona</dt><dd data-i18n="cmp.r3.g">0% (fase lanzamiento)</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.portals">Portales</dt><dd data-i18n="cmp.r3.p">No aplica</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.digital">Agencias digitales</dt><dd data-i18n="cmp.r3.d">2-5% sobre la venta</dd></div>
+        </dl>
+      </div>
+      <div class="cmp-feature">
+        <h3 data-i18n="cmp.r7">Dashboard profesional</h3>
+        <dl>
+          <div class="cmp-row"><dt>Grikona</dt><dd data-i18n="cmp.r7.g">CRM + analíticas por asesor</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.portals">Portales</dt><dd data-i18n="cmp.r7.p">Herramientas básicas</dd></div>
+          <div class="cmp-row"><dt data-i18n="cmp.m.digital">Agencias digitales</dt><dd data-i18n="cmp.r7.d">Solo uso interno</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROADMAP ===================== -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" data-i18n="roadmap.eyebrow">Roadmap</span>
+      <h2 data-i18n="roadmap.h2">Una visión, paso a paso</h2>
+    </div>
+
+    <div class="roadmap" id="roadmapEl">
+      <div class="roadmap__track">
+        <div class="roadmap__rail"></div>
+        <div class="roadmap__trail" id="roadmapTrail"></div>
+        <div class="roadmap__walker" id="roadmapWalker">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M20 10v14a4 4 0 01-4 4h-3" stroke="#E8E2D5" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28 10v20a4 4 0 004 4h3" stroke="#B18D4C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="10" r="3" fill="#fff"/>
+          </svg>
+        </div>
+
+        <div class="milestones">
+          <article class="milestone">
+            <div class="milestone__body">
+              <span class="milestone__date">2015</span>
+              <h3 data-i18n="roadmap.m1t">Fundación</h3>
+              <p data-i18n="roadmap.m1p">Nace Grikona en el centro de Valencia. Equipo inicial, marca y primeras operaciones de barrio.</p>
+            </div>
+            <span class="milestone__num">01</span>
+          </article>
+          <article class="milestone">
+            <div class="milestone__body">
+              <span class="milestone__date">2020</span>
+              <h3 data-i18n="roadmap.m2t">Consolidación</h3>
+              <p data-i18n="roadmap.m2p">Más de 10 años de experiencia acumulada y una cartera estable en Ruzafa, El Carmen y L'Eixample.</p>
+            </div>
+            <span class="milestone__num">02</span>
+          </article>
+          <article class="milestone">
+            <div class="milestone__body">
+              <span class="milestone__date">2024</span>
+              <h3 data-i18n="roadmap.m3t">Digitalización</h3>
+              <p data-i18n="roadmap.m3p">Inicio del desarrollo de la plataforma: verificación documental, matching y panel para agencias.</p>
+            </div>
+            <span class="milestone__num">03</span>
+          </article>
+          <article class="milestone">
+            <div class="milestone__body">
+              <span class="milestone__date">2026</span>
+              <h3 data-i18n="roadmap.m4t">Plataforma verificada</h3>
+              <p data-i18n="roadmap.m4p">Lanzamiento de la app y el dashboard en Valencia capital, con las primeras agencias colaboradoras.</p>
+            </div>
+            <span class="milestone__num">04</span>
+          </article>
+          <article class="milestone">
+            <div class="milestone__body">
+              <span class="milestone__date">2028+</span>
+              <h3 data-i18n="roadmap.m5t">Referencia en España</h3>
+              <p data-i18n="roadmap.m5p">Expansión a Alicante, Castellón, Málaga, Sevilla y Bilbao. La nueva forma de operar en inmobiliario.</p>
+            </div>
+            <span class="milestone__num">05</span>
+          </article>
+        </div>
+      </div>
+
+      <blockquote class="roadmap__vision" data-i18n="roadmap.vision">«La vivienda deja de ser un dolor de cabeza y se convierte en una experiencia natural, eficiente y empoderada.»</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section--gray" id="faq">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+      <h2 data-i18n="faq.h2">Preguntas frecuentes</h2>
+    </div>
+
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q1">¿Qué es Grikona?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a1">Grikona es una inmobiliaria de Valencia que combina una plataforma digital de propiedades verificadas con un equipo profesional que te acompaña en la compra, la venta o el alquiler.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q2">¿En qué se diferencia de los portales tradicionales?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a2">Aquí no publicamos anuncios sin comprobar. Verificamos la identidad del propietario, la titularidad catastral y visitamos la propiedad antes de publicarla. Así no pierdes el tiempo con anuncios duplicados o fantasma.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q3">¿Cuánto cuesta usar Grikona?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a3">Usar la app es gratis. Si eres propietario activo, el plan Pro Individual cuesta 9,99€/mes. Para inmobiliarias, el plan Pro Agencia cuesta 49,99€/mes. Durante la fase de lanzamiento no cobramos comisión de captación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q4">¿Cómo verificáis los anuncios?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Aplicamos tres capas: identidad verificada (DNI/NIE y comprobación documental), anuncios reales (verificación catastral y visita física) y datos protegidos (infraestructura segura y cumplimiento del RGPD).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q5">¿En qué zona opera Grikona?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Empezamos en Valencia capital y su área metropolitana: Ruzafa, El Carmen, El Cabanyal, Benimaclet, L'Eixample, Ciutat Vella, Quatre Carreres y La Cañada, entre otras.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q6">¿Puedo elegir si quiero ayuda inmobiliaria?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a6">Sí. Al publicar eliges si quieres acompañamiento desde el principio, si prefieres intentarlo por tu cuenta con ayuda de reserva, o si prefieres gestionarlo todo directamente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-i18n="faq.q7">¿Cómo puedo unirme?</span> <span class="sign">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a7">Apúntate a la lista de espera desde el formulario de esta página. Te avisaremos en cuanto abramos el acceso anticipado en Valencia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta" id="contacto">
+  <div class="container final-cta__inner">
+    <div class="final-cta__social reveal">
+      <div class="community__avatars">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="">
+      </div>
+      <span data-i18n="cta.waitlist">+100 ya en la lista de espera</span>
+    </div>
+    <h2 class="reveal" data-i18n-html="cta.h2">Tu próxima conexión está a un <span class="mow" aria-hidden="true"></span> de distancia</h2>
+    <p class="reveal" data-delay="1" data-i18n="cta.p">Busques hogar o publiques tu vivienda, apúntate al acceso anticipado. Empezamos en Valencia.</p>
+    <form class="final-cta__actions reveal" data-delay="2" id="waitlistForm" style="max-width:520px;margin:0 auto;flex-wrap:nowrap">
+      <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="tu@email.com" aria-label="Email" style="flex:1;min-width:0;padding:15px 18px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-family:inherit;font-size:15px;outline:none">
+      <button class="btn btn-secondary" type="submit" data-i18n="cta.button">Quiero acceso</button>
+    </form>
+    <p class="final-cta__meta reveal" data-delay="3" data-i18n-html="cta.meta">Lanzamiento en Valencia · 2026<br>¿Prefieres hablar directamente? <a href="mailto:info@grikona.com">info@grikona.com</a></p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#B18D4C"/><path d="M9 21V11l7-5 7 5v10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 21v-5h6v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Grikona<small>Valencia</small></span>
+        </a>
+        <p data-i18n="footer.desc">Una plataforma para buscar y publicar vivienda. Un equipo que te acompaña en la compra, la venta y el alquiler en Valencia.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 005 0 2.5 2.5 0 00-2.52-2.5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.31h-4v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9v-12z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 data-i18n="footer.nav">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#solucion" data-i18n="nav.how">Cómo funciona</a></li>
+          <li><a href="#confianza" data-i18n="nav.trust">Confianza</a></li>
+          <li><a href="#precios" data-i18n="nav.pricing">Precios</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="inmobiliarias.html" data-i18n="nav.agencies">Para inmobiliarias</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="footer.contact">Contacto</h4>
+        <ul class="footer-links footer-contact">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:info@grikona.com">info@grikona.com</a></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><a href="tel:+34600123456">+34 600 123 456</a></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg><span>Av. Gran Vía Fernando El Católico, 83 — Valencia</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 Grikona · Agencia inmobiliaria registrada RAICV-6201</span>
+      <div class="legal">
+        <a href="#" data-i18n="footer.privacy">Política de privacidad</a>
+        <a href="#" data-i18n="footer.terms">Términos y condiciones</a>
+        <a href="#" data-i18n="footer.cookies">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
