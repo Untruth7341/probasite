@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2F3C40">
   <title data-i18n="ag.meta.title">Para inmobiliarias — Dashboard de Grikona</title>
   <meta name="description" content="Recibe solicitudes de propietarios verificados y organiza captaciones, equipo y seguimiento desde el dashboard profesional de Grikona.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
@@ -25,6 +26,7 @@
       <li><a href="index.html#precios" data-i18n="nav.pricing">Precios</a></li>
       <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
       <li><a href="inmobiliarias.html" data-i18n="nav.agencies">Para inmobiliarias</a></li>
+      <li class="nav-links__cta"><a href="#demo" class="btn btn-secondary" data-i18n="ag.hero.cta1">Solicitar demo</a></li>
     </ul>
     <div class="nav-actions">
       <div class="lang-select">
@@ -160,7 +162,7 @@
       <h2 data-i18n="ag.demo.h2">Descubre el dashboard en 20 minutos</h2>
       <p class="lead" data-i18n="ag.demo.lead">Cuéntanos quién eres y te enseñamos cómo Grikona puede llenar tu cartera de inmuebles verificados.</p>
     </div>
-    <form class="reveal" data-delay="1" id="waitlistForm" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:100%">
+    <form class="demo-form reveal" data-delay="1" id="waitlistForm" data-done-key="ag.demo.done" style="max-width:100%">
       <input required data-i18n-placeholder="ag.demo.agency" placeholder="Nombre de la agencia" aria-label="Agencia" style="padding:15px 18px;border-radius:12px;border:1.5px solid var(--bg-gray-dark);font-family:inherit;font-size:15px;outline:none">
       <input type="email" required data-i18n-placeholder="ag.demo.email" placeholder="Email de contacto" aria-label="Email" style="padding:15px 18px;border-radius:12px;border:1.5px solid var(--bg-gray-dark);font-family:inherit;font-size:15px;outline:none">
       <input data-i18n-placeholder="ag.demo.zone" placeholder="Ciudad / zona" aria-label="Zona" style="padding:15px 18px;border-radius:12px;border:1.5px solid var(--bg-gray-dark);font-family:inherit;font-size:15px;outline:none;grid-column:1/-1">

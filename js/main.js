@@ -20,15 +20,26 @@
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById("navToggle");
   if (navToggle && header) {
-    navToggle.addEventListener("click", function () {
-      var open = header.classList.toggle("open");
+    var setNav = function (open) {
+      header.classList.toggle("open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("nav-open", open);
+    };
+    navToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setNav(!header.classList.contains("open"));
     });
     header.querySelectorAll(".nav-links a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        header.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", function () { setNav(false); });
+    });
+    document.addEventListener("click", function (e) {
+      if (header.classList.contains("open") && !header.contains(e.target)) setNav(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setNav(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 1024) setNav(false);
     });
   }
 
@@ -323,10 +334,11 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button");
-      var input = form.querySelector("input");
+      var inputs = form.querySelectorAll("input");
+      var doneKey = form.getAttribute("data-done-key") || "cta.done";
       var original = btn ? btn.textContent : "";
-      if (btn) { btn.textContent = t("cta.done"); btn.disabled = true; }
-      if (input) input.value = "";
+      if (btn) { btn.textContent = t(doneKey); btn.disabled = true; }
+      inputs.forEach(function (input) { input.value = ""; });
       window.setTimeout(function () {
         if (btn) { btn.textContent = original; btn.disabled = false; }
       }, 2600);
