@@ -358,3 +358,31 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+/* «Откуда вы смотрите»: спрашиваем свой Cloudflare Worker (/api/visitor).
+   Если API нет (локально, GitHub Pages) — карточка просто не показывается. */
+(function () {
+  var card = document.getElementById('geoCard'), text = document.getElementById('geoText');
+  if (!card || !text || !window.fetch) return;
+  var t0 = performance.now();
+  fetch('/api/visitor', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.city || d.distanceKm == null) return;
+      var ms = Math.round(performance.now() - t0);
+      var lang = (document.documentElement.lang || 'es').slice(0, 2);
+      var km = d.distanceKm.toLocaleString(lang);
+      var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); };
+      var city = '<strong>' + esc(d.city) + '</strong>';
+      var near = d.distanceKm < 30;
+      var msg = {
+        es: near ? 'Estás en ' + city + ', ¡muy cerca de nosotros!' : 'Nos visitas desde ' + city + ' · <strong>' + km + ' km</strong> hasta Valencia',
+        en: near ? 'You are in ' + city + ', right around the corner!' : 'Visiting from ' + city + ' · <strong>' + km + ' km</strong> to Valencia',
+        ru: near ? 'Вы в ' + city + ', совсем рядом с нами!' : 'Вы смотрите из ' + city + ' · <strong>' + km + ' км</strong> до Валенсии'
+      };
+      text.innerHTML = (msg[lang] || msg.es) +
+        (d.colo ? ' <span class="geo-card__colo">· edge ' + esc(d.colo) + ' · ' + ms + ' ms</span>' : '');
+      card.hidden = false;
+    })
+    .catch(function () {});
+})();
