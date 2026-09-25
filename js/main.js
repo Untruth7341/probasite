@@ -345,3 +345,16 @@
     });
   }
 })();
+
+/* Индикатор прокрутки страницы */
+(function () {
+  var bar = document.querySelector('.scroll-progress');
+  if (!bar) return;
+  function update() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.setProperty('--scroll', h > 0 ? Math.min(window.scrollY / h, 1) : 0);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
