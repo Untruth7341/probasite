@@ -841,3 +841,34 @@ button { font-family: inherit; }
   0%   { background-position: 0% 0%, 100% 100%, 0 0; }
   100% { background-position: 30% 20%, 70% 80%, 0 0; }
 }
+
+/* ---------- Страница для агентств: минималистичная версия ---------- */
+.page-ag .section { padding: 96px 0; }
+.page-ag .section--gray { background: var(--bg-gray); }
+.page-ag .page-hero h1 { max-width: 16ch; }
+.page-ag .showcase__frame { box-shadow: 0 30px 80px rgba(31, 37, 68,.14); }
+
+/* Преимущества: без карточек и иконок — номер, линия, текст */
+.features--minimal { grid-template-columns: repeat(2, 1fr); gap: 0 64px; counter-reset: adv; }
+.features--minimal .feature { background: none; border: 0; border-top: 1px solid var(--bg-gray-dark); border-radius: 0; padding: 28px 0 36px; counter-increment: adv; position: relative; transition: border-color .3s; }
+.features--minimal .feature::before { content: counter(adv, decimal-leading-zero); display: block; font-family: "Fraunces", Georgia, serif; font-size: 15px; color: var(--primary); margin-bottom: 14px; }
+.features--minimal .feature::after { content: ""; position: absolute; left: 0; top: -1px; height: 1px; width: 0; background: var(--primary); transition: width .5s ease; }
+.features--minimal .feature:hover { transform: none; box-shadow: none; }
+.features--minimal .feature:hover::after { width: 100%; }
+.features--minimal .feature h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.features--minimal .feature p { color: var(--text-muted); margin: 0; max-width: 46ch; }
+
+/* Форма демо — чистые поля */
+.page-ag .demo-form input { padding: 15px 18px; border-radius: 12px; border: 1.5px solid var(--bg-gray-dark); background: #fff; font: inherit; color: var(--text-primary); transition: border-color .2s, box-shadow .2s; }
+.page-ag .demo-form input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(184, 71, 47,.12); }
+.page-ag .demo-form button { grid-column: 1 / -1; }
+.demo-alt { text-align: center; margin: 22px 0 0; color: var(--text-muted); font-size: 15px; }
+.demo-alt a { color: var(--primary); font-weight: 600; }
+
+@media (max-width: 860px) {
+  .features--minimal { grid-template-columns: 1fr; }
+  .page-ag .section { padding: 72px 0; }
+  .page-ag .demo-form { grid-template-columns: 1fr; }
+}
+.page-ag .step { background: none; border: 0; border-top: 1px solid var(--bg-gray-dark); border-radius: 0; box-shadow: none; padding: 26px 0 0; }
+.page-ag .step:hover { transform: none; box-shadow: none; }
