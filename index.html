@@ -75,6 +75,14 @@
           <span class="geo-card__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
           <span class="geo-card__text" id="geoText"></span>
         </div>
+        <div class="vlc-live" id="vlcLive" hidden>
+          <span class="vlc-live__dot" aria-hidden="true"></span>
+          <span class="vlc-live__label" data-vlc="now">Valencia ahora</span>
+          <span class="vlc-live__item" id="vlcTime"></span>
+          <span class="vlc-live__item" id="vlcWx"></span>
+          <span class="vlc-live__item" id="vlcSea"></span>
+          <span class="vlc-live__item" id="vlcSun"></span>
+        </div>
         <div class="hero__social">
           <div class="hero__avatars">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=100&amp;q=80" alt="" width="44" height="44" loading="lazy">
@@ -448,6 +456,35 @@
 </section>
 
 <!-- ===================== PRICING ===================== -->
+<section class="section section--gray calc" id="calculadora">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-vlc="calcEyebrow">Calculadora</span>
+      <h2 data-vlc="calcH2">¿Cuánto pagarías al mes?</h2>
+      <p class="lead" data-vlc="calcLead">Mueve los controles y mira al instante la cuota, los intereses y el ahorro que necesitas.</p>
+    </div>
+    <div class="calc__grid reveal">
+      <div class="calc__controls">
+        <label class="calc__row"><span class="calc__name" data-vlc="price">Precio de la vivienda</span><output id="cPriceOut"></output>
+          <input type="range" id="cPrice" min="60000" max="900000" step="5000" value="240000"></label>
+        <label class="calc__row"><span class="calc__name" data-vlc="down">Entrada</span><output id="cDownOut"></output>
+          <input type="range" id="cDown" min="10" max="60" step="1" value="20"></label>
+        <label class="calc__row"><span class="calc__name" data-vlc="years">Plazo</span><output id="cYearsOut"></output>
+          <input type="range" id="cYears" min="5" max="35" step="1" value="30"></label>
+        <label class="calc__row"><span class="calc__name" data-vlc="rate">Interés anual</span><output id="cRateOut"></output>
+          <input type="range" id="cRate" min="1" max="7" step="0.05" value="3.2"></label>
+      </div>
+      <div class="calc__result">
+        <span class="calc__small" data-vlc="monthly">Cuota mensual</span>
+        <div class="calc__big"><span id="cMonthly">0</span> €</div>
+        <div class="calc__bar" aria-hidden="true"><span id="cBarP"></span><span id="cBarI"></span></div>
+        <div class="calc__legend"><span><i class="p"></i><span data-vlc="principal">Préstamo</span> <b id="cLoan"></b></span><span><i class="i"></i><span data-vlc="interest">Intereses</span> <b id="cInt"></b></span></div>
+        <div class="calc__save"><span data-vlc="savings">Ahorro necesario</span> <b id="cSave"></b><small data-vlc="savingsNote">entrada + ~12 % de impuestos y gastos (estimación)</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="precios">
   <div class="container">
     <div class="section-head reveal">

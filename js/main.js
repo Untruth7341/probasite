@@ -386,3 +386,81 @@
     })
     .catch(function () {});
 })();
+
+/* Тексты для «Валенсия сейчас» и калькулятора (es / en / zh / ru) */
+var VLC_T = {
+  es: { now: 'Valencia ahora', sea: 'mar', sunset: 'atardecer', calcEyebrow: 'Calculadora', calcH2: '¿Cuánto pagarías al mes?', calcLead: 'Mueve los controles y mira al instante la cuota, los intereses y el ahorro que necesitas.', price: 'Precio de la vivienda', down: 'Entrada', years: 'Plazo', rate: 'Interés anual', monthly: 'Cuota mensual', principal: 'Préstamo', interest: 'Intereses', savings: 'Ahorro necesario', savingsNote: 'entrada + ~12 % de impuestos y gastos (estimación)', y: 'años' },
+  en: { now: 'Valencia now', sea: 'sea', sunset: 'sunset', calcEyebrow: 'Calculator', calcH2: 'What would you pay per month?', calcLead: 'Move the sliders and instantly see the payment, the interest and the savings you need.', price: 'Property price', down: 'Down payment', years: 'Term', rate: 'Annual interest', monthly: 'Monthly payment', principal: 'Loan', interest: 'Interest', savings: 'Savings needed', savingsNote: 'down payment + ~12% taxes and fees (estimate)', y: 'years' },
+  zh: { now: '瓦伦西亚此刻', sea: '海水', sunset: '日落', calcEyebrow: '计算器', calcH2: '每月需要还多少？', calcLead: '拖动滑块，即时查看月供、利息和所需存款。', price: '房价', down: '首付', years: '期限', rate: '年利率', monthly: '月供', principal: '贷款', interest: '利息', savings: '所需存款', savingsNote: '首付 + 约12%税费（估算）', y: '年' },
+  ru: { now: 'Валенсия сейчас', sea: 'море', sunset: 'закат', calcEyebrow: 'Калькулятор', calcH2: 'Сколько вы будете платить в месяц?', calcLead: 'Двигайте ползунки — платёж, проценты и нужные накопления пересчитаются мгновенно.', price: 'Цена жилья', down: 'Первый взнос', years: 'Срок', rate: 'Ставка в год', monthly: 'Ежемесячный платёж', principal: 'Кредит', interest: 'Проценты', savings: 'Нужно накопить', savingsNote: 'взнос + ~12 % налогов и расходов (оценка)', y: 'лет' }
+};
+function vlcLang() { var l = (document.documentElement.lang || 'es').slice(0, 2); return VLC_T[l] ? l : 'es'; }
+function vlcT(k) { return VLC_T[vlcLang()][k]; }
+function vlcApply() { document.querySelectorAll('[data-vlc]').forEach(function (el) { el.textContent = vlcT(el.getAttribute('data-vlc')); }); }
+
+/* «Валенсия сейчас»: местное время тикает в браузере, погоду и море отдаёт Worker */
+(function () {
+  var box = document.getElementById('vlcLive');
+  if (!box || !window.fetch) return;
+  var elTime = document.getElementById('vlcTime'), elWx = document.getElementById('vlcWx'),
+      elSea = document.getElementById('vlcSea'), elSun = document.getElementById('vlcSun'), data = null;
+  function icon(code, day) {
+    if (code === 0) return day ? '☀' : '☾';
+    if (code <= 2) return day ? '⛅' : '☁';
+    if (code === 3 || code === 45 || code === 48) return '☁';
+    if (code >= 95) return '⛈';
+    if (code >= 71 && code <= 77) return '❄';
+    return '☂';
+  }
+  function render() {
+    elTime.innerHTML = '<b>' + new Intl.DateTimeFormat('es-ES', { timeZone: 'Europe/Madrid', hour: '2-digit', minute: '2-digit' }).format(new Date()) + '</b>';
+    if (!data) return;
+    elWx.innerHTML = icon(data.code, data.isDay) + ' <b>' + Math.round(data.temp) + '°C</b>';
+    elSea.innerHTML = data.sea != null ? '≈ ' + vlcT('sea') + ' <b>' + Math.round(data.sea) + '°C</b>' : '';
+    elSun.innerHTML = data.sunset ? '↓ ' + vlcT('sunset') + ' <b>' + data.sunset + '</b>' : '';
+  }
+  fetch('/api/valencia').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || d.temp == null) return;
+    data = d; render(); box.hidden = false; setInterval(render, 15000);
+  }).catch(function () {});
+  new MutationObserver(function () { vlcApply(); render(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+
+/* Калькулятор ипотеки: аннуитетный платёж, всё считается в браузере */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var price = $('cPrice'), down = $('cDown'), years = $('cYears'), rate = $('cRate');
+  if (!price) return;
+  var shown = 0, raf = null;
+  function eur(n) { return Math.round(n).toLocaleString('es-ES') + ' €'; }
+  function animateTo(target) {
+    cancelAnimationFrame(raf);
+    var from = shown, t0 = performance.now();
+    (function step(t) {
+      var k = Math.min((t - t0) / 350, 1), e = 1 - Math.pow(1 - k, 3);
+      shown = from + (target - from) * e;
+      $('cMonthly').textContent = Math.round(shown).toLocaleString('es-ES');
+      if (k < 1) raf = requestAnimationFrame(step);
+    })(t0);
+  }
+  function calc() {
+    var P = +price.value, d = +down.value / 100, n = +years.value * 12, r = +rate.value / 100 / 12;
+    var loan = P * (1 - d);
+    var m = r > 0 ? loan * r / (1 - Math.pow(1 + r, -n)) : loan / n;
+    var interest = m * n - loan;
+    $('cPriceOut').textContent = eur(P);
+    $('cDownOut').textContent = Math.round(d * 100) + ' % · ' + eur(P * d);
+    $('cYearsOut').textContent = years.value + ' ' + vlcT('y');
+    $('cRateOut').textContent = (+rate.value).toFixed(2).replace('.', ',') + ' %';
+    $('cLoan').textContent = eur(loan);
+    $('cInt').textContent = eur(interest);
+    $('cSave').textContent = eur(P * d + P * 0.12);
+    var tot = loan + interest;
+    $('cBarP').style.width = (loan / tot * 100) + '%';
+    $('cBarI').style.width = (interest / tot * 100) + '%';
+    animateTo(m);
+  }
+  [price, down, years, rate].forEach(function (el) { el.addEventListener('input', calc); });
+  new MutationObserver(function () { vlcApply(); calc(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  vlcApply(); calc();
+})();
